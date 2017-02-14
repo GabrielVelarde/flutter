@@ -12,6 +12,8 @@ gem 'devise'
 #for twitter components navbar
 gem 'bootstrap-sass', '~> 3.3.6'
 
+#para ver si se arregla la vaina del login
+gem 'bcrypt', platforms: :ruby
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
