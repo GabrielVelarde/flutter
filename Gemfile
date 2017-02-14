@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+
+#vamos a usar Devise gem para la autenticacion y la cuenta de usuarios
+gem 'devise'
 #for twitter components navbar
 gem 'bootstrap-sass', '~> 3.3.6'
 
