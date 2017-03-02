@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   	#backend code for pages/home
   def home
   	@posts = Post.all
+    @newPost = Post.new
   end
 
   	#backend code for pages/profile
@@ -22,10 +23,14 @@ class PagesController < ApplicationController
 
 	  @newPost = Post.new
 
+    @toFollow = User.all.last(5)
+
   end
 
   	#backend code for pages/explore
   def explore
   	@posts = Post.all
+    @newPost = Post.new
+    @toFollow = User.all.last(5)
   end
 end

@@ -1,15 +1,27 @@
+<% if user_signed_in? %>
+<div class="panel panel-default post-form-panel">
+	<div class="panel-body row">
 
-<%= form_for(@newPost) do |f| %>
-<center>
-  <div class="field">
-    <%= f.label "New Post" %><br />
-    <%= f.text_field :content, autofocus: true %>
-  </div>
+		<DIV class="col-sm-1">
+			<img src="/user.png" class=rounded-img height="35px" width="35px"></img>
+		</DIV>
 
-  <div class="actions">
-    <%= f.submit "Add Post" %>
-  </div>
-</center>
+		<DIV class="col-sm-11">
+		<%= form_for(@newPost) do |f| %>
+
+			  <div class="field" style="margin-left: 10px;">
+			    <%= f.text_field :content, autofocus: true, class: "form-control" %>
+			    <spam type="button" class="btn btn-submit" style ="float: right; margin-top: 5px;">
+			    <%= f.submit "Add Post", class: "btn btn-primary" %></spam>
+			  </div>
+
+
+			<% end %>
+		</div>
+
+
+	</div>
+</div>
+
 <% end %>
-
 

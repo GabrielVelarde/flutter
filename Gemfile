@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'execjs'
 
 #vamos a usar Devise gem para la autenticacion y la cuenta de usuarios
 gem 'devise'

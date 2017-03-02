@@ -13,7 +13,35 @@
   <body>
     <%= render '/layouts/nav'%>
 
+    <% if params[:id] != nil %>
+      <% @url = "/user/" + params[:id]%>
+      <% if current_page?(@url)%>
+        <img src="/banner2.jpg" class="profile-banner">
+          <div class ="row">
+            <div class = "col-sm-12" style="background-color: white;">
+              <div style="container">
+                <div class="col-sm-3">&nbsp;</div>
+                  <div class="col-sm-6" style="margin-top: 5px">
+                      <div class="col-sm-2" style="font-size: 80%; opacity: 0.7;">TWEETS<BR>
+                        <H6 style="color:#1E90FF; font-size: 150%;"><%= User.find_by_username(params[:id]).post.count %></H6> </div>
+                        <div class="col-sm-2" style="font-size: 80%; opacity: 0.7;">FOLLOWERS<BR>
+                        <H6 style="color:#1E90FF; font-size: 150%;"><%= User.find_by_username(params[:id]).followers.count %></H6> </div>
 
+                        <%  if user_signed_in? %>
+
+                              <div class="col-sm-8" style="text-align: right; margin-top: 5px;">
+                              <a href="/users/edit"> 
+                              <li  type="button" class="btn btn-default" style="color:grey; font-weight: bold;">Edit Profile
+                              </li></a></div>
+
+                        <%end%>
+                </div>
+              </div> 
+            </div>
+          </div>
+
+      <% end %>
+    <% end %>
     <div class ="container"> 
 
     <%#esto es lo del devise%>
